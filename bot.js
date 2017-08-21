@@ -14,7 +14,7 @@ console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 bot.onText(/^/, function (msg) {
   var name = msg.from.first_name;
   if (msg.text = 'k'){
-    bot.sendMessage(msg.chat.id, 'GOH ' + name + ', WAT EEN MOOIE LETTER!').then(function () {});
+    bot.sendMessage(msg.chat.id, 'GOH ' + name + ', WAT EEN MOOIE LETTER!' + msg.text).then(function () {});
   }
   });
 
