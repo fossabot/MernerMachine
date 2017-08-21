@@ -14,10 +14,10 @@ console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 bot.onText(/^/, function (msg) {
   var name = msg.from.first_name;
   if (msg.text =='k' || msg.text == 'K'){
-    bot.sendMessage(msg.chat.id, 'GOH ' + name + ', WAT EEN MOOIE LETTER!').then(function () {});
+    bot.sendMessage(msg.chat.id, 'GOH ' + name + ', WAT EEN MOOIE LETTER!');
   }
   if (msg.text =='lol' || msg.text =='LOL'){
-    bot.sendMessage(msg.chat.id, 'HAHA,' + name + ' zo grappig HAHAHAHA').then(function () {});
+    bot.sendVideo(msg.chat.id, "https://media1.giphy.com/media/fGuqeA6PiXINa/giphy.gif");
   }
   });
 
