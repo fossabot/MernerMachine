@@ -15,7 +15,7 @@ console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 bot.onText(/^/, function (msg) {
   var name = msg.from.first_name;
   if (msg.text.toLowerCase() =='Hello' || msg.text.toLowerCase() =='Hallo' || msg.text.toLowerCase() =='Hi' || msg.text.toLowerCase() =='Hey'){
-    bot.sendMessage(msg.chat.id, 'Hallow ' + name.toUpperCase() + '!');
+    bot.sendMessage(msg.chat.id, 'Hallo ' + name + '!');
   }
   if (msg.text.toLowerCase() =='k'){
     bot.sendMessage(msg.chat.id, 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!');
