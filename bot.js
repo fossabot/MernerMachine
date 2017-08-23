@@ -23,7 +23,7 @@ bot.onText(/^/, function (msg) {
   if (msg.text.toLowerCase().includes('goesting') || msg.text.toLowerCase().includes('zin in')){
       bot.sendMessage(msg.chat.id, '( ͡° ͜ʖ ͡°)');
   }
-  if (msg.text.toLowerCase() == 'wie rijd er?'){
+  if (msg.text.toLowerCase().incudes('wie rijd')){
       switch(wieRijd){
         case 0:
           bot.sendMessage(msg.chat.id, 'Het is aan Steffen om te rijden');
