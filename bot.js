@@ -1,6 +1,7 @@
 var token = process.env.TOKEN;
 var Bot = require('node-telegram-bot-api');
 var bot;
+var wieRijd = 0;
 
 if(process.env.NODE_ENV === 'production') {
   bot = new Bot(token);
@@ -21,6 +22,22 @@ bot.onText(/^/, function (msg) {
   }
   if (msg.text.includes('goesting') || msg.text.includes('zin in')){
       bot.sendMessage(msg.chat.id, '( ͡° ͜ʖ ͡°)');
+  }
+  if (msg.text.toLowerCase() == 'wie rijd er?'){
+      switch(wieRijd){
+        case 0:
+          bot.sendMessage(msg.chat.id, 'Het is aan Steffen om te rijden');
+          wieRijd++;
+          break;
+        case 1:
+          bot.sendMessage(msg.chat.id, 'Het is aan Kevin om te rijden');
+          wieRijd++;
+          break;
+        case 2:
+          bot.sendMessage(msg.chat.id, 'Het is aan Jori om te rijden');
+          wieRijd = 0;
+          break;
+      } 
   }
   });
 
