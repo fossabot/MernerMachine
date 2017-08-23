@@ -23,7 +23,7 @@ bot.onText(/^/, function (msg) {
 
 
 //Responses
-  if (msgText.toLowerCase() =='Hello' || msgText.toLowerCase() =='Hallo' || msgText.toLowerCase() =='Hi' || msgText.toLowerCase() =='Hey'){
+  if (msgText.toLowerCase() =='Hello'){
     bot.sendMessage(chatid, 'Hallo ' + name + '!');
   }
   if (msgText.toLowerCase() =='k'){
