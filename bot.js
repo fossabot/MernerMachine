@@ -19,6 +19,9 @@ bot.onText(/^/, function (msg) {
   if (msg.text.toLowerCase() =='lol' && !(msg.text == "LOL")){
     bot.sendVideo(msg.chat.id, "https://media1.giphy.com/media/fGuqeA6PiXINa/giphy.gif");
   }
+  if (msg.text.includes('goesting')){
+      bot.sendMessage(msg.chat.id, '( ͡° ͜ʖ ͡°)');
+  }
   });
 
 module.exports = bot;
