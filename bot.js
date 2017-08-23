@@ -23,22 +23,6 @@ bot.onText(/^/, function (msg) {
   if (msg.text.includes('goesting') || msg.text.includes('zin in')){
       bot.sendMessage(msg.chat.id, '( ͡° ͜ʖ ͡°)');
   }
-  if (msg.text.toLowerCase().incudes('wie rijd')){
-      switch(wieRijd){
-        case 0:
-          bot.sendMessage(msg.chat.id, 'Het is aan Steffen om te rijden');
-          wieRijd++;
-          break;
-        case 1:
-          bot.sendMessage(msg.chat.id, 'Het is aan Kevin om te rijden');
-          wieRijd++;
-          break;
-        case 2:
-          bot.sendMessage(msg.chat.id, 'Het is aan Jori om te rijden');
-          wieRijd = 0;
-          break;
-      } 
-  }
   });
 
 module.exports = bot;
