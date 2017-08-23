@@ -23,18 +23,18 @@ bot.onText(/^/, function (msg) {
 
 
 //Responses
-  if (msgText.toLowerCase() =='Hello'){
-    bot.sendMessage(chatid, 'Hallo ' + name + '!');
-  }
-  if (msgText.toLowerCase() =='k'){
-    bot.sendMessage(chatid, 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!');
-  }
-  if (msgText.toLowerCase() =='lol' && !(msgText == "LOL")){
-    bot.sendVideo(chatid, "https://media1.giphy.com/media/fGuqeA6PiXINa/giphy.gif");
-  }
-  if (msgText.toLowerCase().includes('goesting') || msgText.toLowerCase().includes('zin in')){
-      bot.sendMessage(chatid, '( ͡° ͜ʖ ͡°)');
-  }
+if (msgText.toLowerCase() =='Hello'){
+  bot.sendMessage(chatid, 'Hallo ' + name + '!');
+
+} else if (msgText.toLowerCase() =='k'){
+  bot.sendMessage(chatid, 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!');
+
+} else if (msgText.toLowerCase() =='lol' && !(msgText == "LOL")){
+  bot.sendVideo(chatid, "https://media1.giphy.com/media/fGuqeA6PiXINa/giphy.gif");
+  
+} else if (msgText.toLowerCase().includes('goesting') || msgText.toLowerCase().includes('zin in')){
+  bot.sendMessage(chatid, '( ͡° ͜ʖ ͡°)');
+}
 });
 
 module.exports = bot;
