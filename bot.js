@@ -23,7 +23,11 @@ bot.onText(/^/, function (msg){
   var sendString;
 
 //Responses
-if (msgText.toLowerCase()=='k'){
+if (msgText.toLowerCase()=='hallo'){
+  sendString= 'Hallo ' + name + '!'
+  bot.sendMessage(chatid, sendString);
+
+} else if (msgText.toLowerCase()=='k'){
   sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!'
   bot.sendMessage(chatid, sendString);
 
