@@ -18,20 +18,20 @@ console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 bot.onText(/^/, function (msg) {
 //Create vars 
   var name = msg.from.first_name;
-  var msgText = msg.text;
-  var chatid = msg.chat.id;
-
+  var msgText = string(msg.text);
+  var chatid = string(msg.chat.id);
 
 //Responses
-if (msgText.toLowerCase() =='Hello'){
+if (msgText.toLowerCase()=='Hallo'){
+  console.log('Test check get message');
   bot.sendMessage(chatid, 'Hallo ' + name + '!');
 
-} else if (msgText.toLowerCase() =='k'){
+} else if (msgText.toLowerCase()=='k'){
   bot.sendMessage(chatid, 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!');
 
-} else if (msgText.toLowerCase() =='lol' && !(msgText == "LOL")){
+} else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")){
   bot.sendVideo(chatid, "https://media1.giphy.com/media/fGuqeA6PiXINa/giphy.gif");
-  
+
 } else if (msgText.toLowerCase().includes('goesting') || msgText.toLowerCase().includes('zin in')){
   bot.sendMessage(chatid, '( ͡° ͜ʖ ͡°)');
 }
