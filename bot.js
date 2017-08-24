@@ -22,11 +22,7 @@ bot.onText(/^/, function (msg) {
   var chatid = string(msg.chat.id);
 
 //Responses
-if (msgText.toLowerCase()=='Hallo'){
-  console.log('Test check get message');
-  bot.sendMessage(chatid, 'Hallo ' + name.toUpperCase() + '!');
-
-} else if (msgText.toLowerCase()=='k'){
+if (msgText.toLowerCase()=='k'){
   bot.sendMessage(chatid, 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!');
 
 } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")){
