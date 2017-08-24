@@ -18,8 +18,8 @@ console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 bot.onText(/^/, function (msg){
 //Create vars 
   var name = msg.from.first_name;
-  var msgText = string(msg.text);
-  var chatid = string(msg.chat.id);
+  var msgText = msg.text;
+  var chatid = msg.chat.id;
   var sendString;
 
 //Responses
