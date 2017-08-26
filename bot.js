@@ -3,6 +3,9 @@ var token = process.env.TOKEN;
 var Bot = require('node-telegram-bot-api');
 var bot;
 
+//Variables to use in code
+var driveCounter = 0;
+
 //Set webhook
 if(process.env.NODE_ENV === 'production') {
   bot = new Bot(token);
@@ -23,12 +26,31 @@ bot.onText(/^/, function (msg){
   var sendString;
 
 //Responses
-if (msgText.toLowerCase()=='hallo' || msgText.toLowerCase()=='hello' || msgText.toLowerCase()=='hi'){
-  sendString= 'Hallo ' + name + '!'
+if (msgText.toLowerCase().includes('wie rijd')){
+  switch(driveCounter){
+    case 0:
+      sendString= 'Beurt: Steffen';
+      driveCounter++;
+      break;
+    case 1:
+      sendString= 'Beurt: Kevin';
+      driveCounter++;
+      break;
+    case 2:
+      sendString= 'Beurt: Jori';
+      driveCounter=0;
+      break;
+    default:
+      sendString= 'Uw moeder';
+  }
+  bot.sendMessage(chatid, sendString);
+
+}else if (msgText.toLowerCase()=='hallo' || msgText.toLowerCase()=='hello' || msgText.toLowerCase()=='hi'){
+  sendString= 'Hallo ' + name + '!';
   bot.sendMessage(chatid, sendString);
 
 } else if (msgText.toLowerCase()=='k'){
-  sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!'
+  sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!';
   bot.sendMessage(chatid, sendString);
 
 } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")){
