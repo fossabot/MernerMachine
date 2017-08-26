@@ -45,6 +45,10 @@ if (msgText.toLowerCase().includes('wie rijd')){
   }
   bot.sendMessage(chatid, sendString);
 
+}else if (msgText.toLowerCase()=='wut'){
+  sendString= 'Hallo ' + name + '!';
+  bot.sendPhoto(chatid, "http://i.imgur.com/1JdLiGS.png");
+
 }else if (msgText.toLowerCase()=='hallo' || msgText.toLowerCase()=='hello' || msgText.toLowerCase()=='hi'){
   sendString= 'Hallo ' + name + '!';
   bot.sendMessage(chatid, sendString);
