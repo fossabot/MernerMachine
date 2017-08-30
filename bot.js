@@ -26,7 +26,7 @@ bot.onText(/^/, function (msg){
   var sendString;
 
 //Log message
-console.log('\ncChat ID: ' + chatid + '\nFrom: ' + name +'\nMessage: ' + msgText);
+console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name +'\nMessage: ' + msgText);
 
 //Responses
 if (msgText.toLowerCase().includes('wie rijd')){
