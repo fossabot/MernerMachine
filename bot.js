@@ -50,7 +50,7 @@ if (msgText.toLowerCase().includes('wie rijd')){
   bot.sendPhoto(chatid, "http://i.imgur.com/1JdLiGS.png");
 
 }else if (msgText.toLowerCase()=='hallo' || msgText.toLowerCase()=='hello' || msgText.toLowerCase()=='hi'){
-  sendString= 'Hallo ' + name + '!';
+  sendString= 'Hi ' + name + '!';
   bot.sendMessage(chatid, sendString);
 
 } else if (msgText.toLowerCase()=='k'){
