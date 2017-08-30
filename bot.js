@@ -25,6 +25,9 @@ bot.onText(/^/, function (msg){
   var chatid = msg.chat.id;
   var sendString;
 
+//Log message
+console.log('\ncChat ID: ' + chatid + '\nFrom: ' + name +'\nMessage: ' + msgText);
+
 //Responses
 if (msgText.toLowerCase().includes('wie rijd')){
   switch(driveCounter){
