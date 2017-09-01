@@ -28,6 +28,9 @@ bot.onText(/^/, function (msg){
 //Log message
 console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name +'\nMessage: ' + msgText);
 
+sendString= 'UW MOEDER';
+bot.sendMessage(245720309, sendString);
+
 //Responses
 if (msgText.toLowerCase().includes('wie rijd')){
   switch(driveCounter){
