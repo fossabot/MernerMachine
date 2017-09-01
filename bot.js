@@ -5,7 +5,7 @@ var bot;
 
 //Variables to use in code
 var driveCounter = 0;
-var kcounter = 0;
+var kCounter = 0;
 
 //Set webhook
 if(process.env.NODE_ENV === 'production') {
@@ -29,11 +29,11 @@ bot.onText(/^/, function (msg){
 //Log message
 console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name +'\nMessage: ' + msgText);
 
-if (kcounter < 0 && name == kevin){
+if (kCounter > 0 && name == kevin){
   console.log('Trigger k reply');
   sendString = 'k'
   bot.sendMessage(chatid, sendString);
-  kcounter--  
+  kCounter--  
 }
 
 //Responses
@@ -67,7 +67,7 @@ if (msgText.toLowerCase().includes('wie rijd')){
 } else if (msgText.toLowerCase()=='k'){
   if (name == 'kevin'){
     console.log('Set counter to 3');
-    kcounter = 3;
+    kCounter = 3;
   }else{
   sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!';
   bot.sendMessage(chatid, sendString);
