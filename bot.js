@@ -30,7 +30,7 @@ bot.onText(/^/, function (msg){
 console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name +'\nMessage: ' + msgText);
 
 //Person replies
-if (kCounter > 0 && name == 'jori'){
+if (kCounter > 0 && name == 'jori' && msgText.toLowerCase() != 'k'){
   console.log('Trigger k reply');
   sendString = 'k'
   bot.sendMessage(chatid, sendString);
