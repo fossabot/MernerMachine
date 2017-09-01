@@ -64,7 +64,7 @@ if (msgText.toLowerCase().includes('wie rijd')){
   bot.sendMessage(chatid, sendString);
 
 } else if (msgText.toLowerCase()=='k'){
-  if (name == kevin){
+  if (name == 'kevin'){
     kcounter = 3;
   }else{
   sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!';
