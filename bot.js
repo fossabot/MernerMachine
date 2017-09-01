@@ -5,6 +5,7 @@ var bot;
 
 //Variables to use in code
 var driveCounter = 0;
+var kcounter = 0;
 
 //Set webhook
 if(process.env.NODE_ENV === 'production') {
@@ -20,13 +21,19 @@ console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
 bot.onText(/^/, function (msg){
 //Create vars 
-  var name = msg.from.first_name;
+  var name = msg.from.first_name.toLowerCase();
   var msgText = msg.text;
   var chatid = msg.chat.id;
   var sendString;
 
 //Log message
 console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name +'\nMessage: ' + msgText);
+
+if (kcounter < 0 && name == kevin){
+  sendString = 'k'
+  bot.sendMessage(chatid, sendString);
+  kcounter--  
+}
 
 //Responses
 if (msgText.toLowerCase().includes('wie rijd')){
@@ -57,9 +64,12 @@ if (msgText.toLowerCase().includes('wie rijd')){
   bot.sendMessage(chatid, sendString);
 
 } else if (msgText.toLowerCase()=='k'){
+  if (name == kevin){
+    kcounter = 3;
+  }else{
   sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!';
   bot.sendMessage(chatid, sendString);
-
+  }
 } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")){
   bot.sendVideo(chatid, "https://media1.giphy.com/media/fGuqeA6PiXINa/giphy.gif");
 
