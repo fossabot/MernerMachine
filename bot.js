@@ -69,9 +69,10 @@ if (msgText.toLowerCase().includes('wie rijd')){
   if (name == 'jori'){
     console.log('Set counter to 3');
     kCounter = 3;
+  }
     sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!';
     bot.sendMessage(chatid, sendString);
-  }
+  
 } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")){
   bot.sendVideo(chatid, "https://media1.giphy.com/media/fGuqeA6PiXINa/giphy.gif");
 
