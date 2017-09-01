@@ -29,7 +29,7 @@ bot.onText(/^/, function (msg){
 //Log message
 console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name +'\nMessage: ' + msgText);
 
-if (kCounter > 0 && name == kevin){
+if (kCounter > 0 && name == 'kevin'){
   console.log('Trigger k reply');
   sendString = 'k'
   bot.sendMessage(chatid, sendString);
