@@ -31,7 +31,6 @@ console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name +'\nMessag
 
 //Person replies
 if (kCounter > 0 && name == 'jori' && msgText.toLowerCase() != 'k'){
-  console.log('Trigger k reply');
   sendString = 'k'
   bot.sendMessage(chatid, sendString);
   kCounter--  
@@ -67,7 +66,6 @@ if (msgText.toLowerCase().includes('wie rijd')){
 
 } else if (msgText.toLowerCase()=='k'){
   if (name == 'jori'){
-    console.log('Set counter to 3');
     kCounter = 3;
   }
     sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!';
