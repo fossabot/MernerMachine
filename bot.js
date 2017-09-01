@@ -29,7 +29,8 @@ bot.onText(/^/, function (msg){
 //Log message
 console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name +'\nMessage: ' + msgText);
 
-if (kCounter > 0 && name == 'kevin'){
+//Person replies
+if (kCounter > 0 && name == 'jori'){
   console.log('Trigger k reply');
   sendString = 'k'
   bot.sendMessage(chatid, sendString);
@@ -65,12 +66,11 @@ if (msgText.toLowerCase().includes('wie rijd')){
   bot.sendMessage(chatid, sendString);
 
 } else if (msgText.toLowerCase()=='k'){
-  if (name == 'kevin'){
+  if (name == 'jori'){
     console.log('Set counter to 3');
     kCounter = 3;
-  }else{
-  sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!';
-  bot.sendMessage(chatid, sendString);
+    sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!';
+    bot.sendMessage(chatid, sendString);
   }
 } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")){
   bot.sendVideo(chatid, "https://media1.giphy.com/media/fGuqeA6PiXINa/giphy.gif");
