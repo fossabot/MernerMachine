@@ -72,7 +72,7 @@ if (msgText.toLowerCase().includes('wie rijd')){
     bot.sendMessage(chatid, sendString);
   
 } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")){
-  bot.sendVideo(chatid, "https://media1.giphy.com/media/fGuqeA6PiXINa/giphy.gif");
+  bot.sendVideo(chatid, "https://media1.tenor.com/images/2b84c3aab34089d0d114cf5e73fc1eb6/tenor.gif");
 
 } else if (msgText.toLowerCase().includes('goesting') || msgText.toLowerCase().includes('zin in')){
   sendString = '( ͡° ͜ʖ ͡°)';
