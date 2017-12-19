@@ -72,7 +72,23 @@ if (msgText.toLowerCase().includes('wie rijd')){
     bot.sendMessage(chatid, sendString);
   
 } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")){
-  bot.sendVideo(chatid, "https://media1.tenor.com/images/2b84c3aab34089d0d114cf5e73fc1eb6/tenor.gif");
+  var r = Math.floor(Math.random() * 4);
+
+    switch(r) {
+        case 0:
+            bot.sendVideo(chatid, "https://media1.tenor.com/images/2b84c3aab34089d0d114cf5e73fc1eb6/tenor.gif");
+            break;
+        case 1:
+            bot.sendVideo(chatid, "https://m.popkey.co/a63d01/KAV6_f-maxage-0_s-200x150.gif");
+            break;
+        case 2:
+            bot.sendVideo(chatid, "https://media1.tenor.com/images/0489fb2f025d80cb993ac1e2712682fa/tenor.gif");
+            break;
+        case 3:
+            bot.sendVideo(chatid, "https://media.tenor.com/images/a578b2df97812643906774ca0811952a/tenor.gif");
+            break;
+    }
+}  
 
 } else if (msgText.toLowerCase().includes('goesting') || msgText.toLowerCase().includes('zin in')){
   sendString = '( ͡° ͜ʖ ͡°)';
