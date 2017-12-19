@@ -87,8 +87,7 @@ if (msgText.toLowerCase().includes('wie rijd')){
         case 3:
             bot.sendVideo(chatid, "https://media.tenor.com/images/a578b2df97812643906774ca0811952a/tenor.gif");
             break;
-    }
-}  
+    }  
 
 } else if (msgText.toLowerCase().includes('goesting') || msgText.toLowerCase().includes('zin in')){
   sendString = '( ͡° ͜ʖ ͡°)';
