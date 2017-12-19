@@ -9,90 +9,91 @@ var kCounter = 0;
 var kName = "";
 
 //Set webhook
-if(process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   bot = new Bot(token);
   bot.setWebHook(process.env.HEROKU_URL + bot.token);
-}
-else {
-  bot = new Bot(token, { polling: true });
+} else {
+  bot = new Bot(token, {
+    polling: true
+  });
 }
 
 //Log on console
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
-bot.onText(/^/, function (msg){
-//Create vars 
+bot.onText(/^/, function (msg) {
+  //Create vars 
   var name = msg.from.first_name.toLowerCase();
   var msgText = msg.text;
   var chatid = msg.chat.id;
   var sendString;
 
-//Log message
-console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name +'\nMessage: ' + msgText);
+  //Log message
+  console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name + '\nMessage: ' + msgText);
 
-//Person replies
-if (kCounter > 0 && name == kName && msgText.toLowerCase() != 'k'){
-  sendString = 'k'
-  bot.sendMessage(chatid, sendString);
-  kCounter--  
-}
-
-//Responses
-if (msgText.toLowerCase().includes('wie rijd')){
-  switch(driveCounter){
-    case 0:
-      sendString= 'Beurt: Steffen';
-      driveCounter++;
-      break;
-    case 1:
-      sendString= 'Beurt: Kevin';
-      driveCounter++;
-      break;
-    case 2:
-      sendString= 'Beurt: Jori';
-      driveCounter=0;
-      break;
-    default:
-      sendString= 'Uw moeder';
+  //Person replies
+  if (kCounter > 0 && name == kName && msgText.toLowerCase() != 'k') {
+    sendString = 'k'
+    bot.sendMessage(chatid, sendString);
+    kCounter--
   }
-  bot.sendMessage(chatid, sendString);
 
-}else if (msgText.toLowerCase()=='wut'){
-  sendString= 'Hallo ' + name + '!';
-  bot.sendPhoto(chatid, "http://i.imgur.com/1JdLiGS.png");
+  //Responses
+  if (msgText.toLowerCase().includes('wie rijd')) {
+    switch (driveCounter) {
+      case 0:
+        sendString = 'Beurt: Steffen';
+        driveCounter++;
+        break;
+      case 1:
+        sendString = 'Beurt: Kevin';
+        driveCounter++;
+        break;
+      case 2:
+        sendString = 'Beurt: Jori';
+        driveCounter = 0;
+        break;
+      default:
+        sendString = 'Uw moeder';
+    }
+    bot.sendMessage(chatid, sendString);
 
-}else if (msgText.toLowerCase()=='hallo' || msgText.toLowerCase()=='hello' || msgText.toLowerCase()=='hi'){
-  sendString= 'Hi ' + name + '!';
-  bot.sendMessage(chatid, sendString);
+  } else if (msgText.toLowerCase() == 'wut') {
+    sendString = 'Hallo ' + name + '!';
+    bot.sendPhoto(chatid, "http://i.imgur.com/1JdLiGS.png");
 
-} else if (msgText.toLowerCase()=='k'){
+  } else if (msgText.toLowerCase() == 'hallo' || msgText.toLowerCase() == 'hello' || msgText.toLowerCase() == 'hi') {
+    sendString = 'Hi ' + name + '!';
+    bot.sendMessage(chatid, sendString);
+
+  } else if (msgText.toLowerCase() == 'k') {
     kName = name;
     kCounter = 3;
-    sendString= 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!';
+    sendString = 'EEN PRACHTIGE LETTER ' + name.toUpperCase() + '!';
     bot.sendMessage(chatid, sendString);
-  
-} else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")){
-  var r = Math.floor(Math.random() * 4);
 
-    switch(r) {
-        case 0:
-            bot.sendVideo(chatid, "https://media1.tenor.com/images/2b84c3aab34089d0d114cf5e73fc1eb6/tenor.gif");
-            break;
-        case 1:
-            bot.sendVideo(chatid, "https://m.popkey.co/a63d01/KAV6_f-maxage-0_s-200x150.gif");
-            break;
-        case 2:
-            bot.sendVideo(chatid, "https://media1.tenor.com/images/0489fb2f025d80cb993ac1e2712682fa/tenor.gif");
-            break;
-        case 3:
-            bot.sendVideo(chatid, "https://media.tenor.com/images/a578b2df97812643906774ca0811952a/tenor.gif");
-            break;
-    }  
+  } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")) {
+    var r = Math.floor(Math.random() * 4);
 
-} else if (msgText.toLowerCase().includes('goesting') || msgText.toLowerCase().includes('zin in')){
-  sendString = '( ͡° ͜ʖ ͡°)';
-  bot.sendMessage(chatid, sendString);
-}
+    switch (r) {
+      case 0:
+        bot.sendVideo(chatid, "https://media1.tenor.com/images/2b84c3aab34089d0d114cf5e73fc1eb6/tenor.gif");
+        break;
+      case 1:
+        bot.sendVideo(chatid, "https://m.popkey.co/a63d01/KAV6_f-maxage-0_s-200x150.gif");
+        break;
+      case 2:
+        bot.sendVideo(chatid, "https://media1.tenor.com/images/0489fb2f025d80cb993ac1e2712682fa/tenor.gif");
+        break;
+      case 3:
+        bot.sendVideo(chatid, "https://media.tenor.com/images/a578b2df97812643906774ca0811952a/tenor.gif");
+        break;
+    }
+
+  } else if (msgText.toLowerCase().includes('goesting') || msgText.toLowerCase().includes('zin in')) {
+    sendString = '( ͡° ͜ʖ ͡°)';
+    bot.sendMessage(chatid, sendString);
+  }
 });
 
 module.exports = bot;
