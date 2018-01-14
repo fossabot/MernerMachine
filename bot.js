@@ -26,7 +26,7 @@ bot.onText(/^/, function (msg) {
   var name = msg.from.first_name.toLowerCase();
   var msgText = msg.text;
   var chatid = msg.chat.id;
-  //var mssid = msg.message_id;
+  var mssid = msg.message_id;
   var sendString;
 
   //Log message
@@ -55,6 +55,11 @@ bot.onText(/^/, function (msg) {
     bot.sendMessage(chatid, sendString);
 
   } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")) {
+
+    deleteMessage(chatid, messid);
+    sendString = 'LADIES AND GENTLEMEN, ' + nametoUpperCase() + 'IS LAUGHING OUT LOUD!';
+    bot.sendMessage(chatid, sendString);
+
     var r = Math.floor(Math.random() * 4);
 
     switch (r) {
@@ -71,7 +76,7 @@ bot.onText(/^/, function (msg) {
         bot.sendVideo(chatid, "https://media.tenor.com/images/a578b2df97812643906774ca0811952a/tenor.gif");
         break;
     }
-  } 
+  }
 });
 
 module.exports = bot;
