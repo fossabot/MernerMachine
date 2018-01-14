@@ -30,7 +30,7 @@ bot.onText(/^/, function (msg) {
   var sendString;
 
   //Log message
-  console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name + '\nMessage: ' + msgText);
+  console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name + '\nMessage: ' + msgText + 'Message ID: ' + mssid);
 
   //Person replies
   if (kCounter > 0 && name == kName && msgText.toLowerCase() != 'k') {
