@@ -1,5 +1,3 @@
-module.exports = bot;
-
 //Get API and token
 var token = process.env.TOKEN;
 var Bot = require('node-telegram-bot-api');
@@ -75,3 +73,5 @@ bot.onText(/^/, function (msg) {
     }
   } 
 });
+
+module.exports = bot;
