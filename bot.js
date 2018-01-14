@@ -1,3 +1,5 @@
+module.exports = bot;
+
 //Get API and token
 var token = process.env.TOKEN;
 var Bot = require('node-telegram-bot-api');
@@ -39,26 +41,7 @@ bot.onText(/^/, function (msg) {
   }
 
   //Responses
-  if (msgText.toLowerCase().includes('wie rijd')) {
-    switch (driveCounter) {
-      case 0:
-        sendString = 'Beurt: Steffen';
-        driveCounter++;
-        break;
-      case 1:
-        sendString = 'Beurt: Kevin';
-        driveCounter++;
-        break;
-      case 2:
-        sendString = 'Beurt: Jori';
-        driveCounter = 0;
-        break;
-      default:
-        sendString = 'Uw moeder';
-    }
-    bot.sendMessage(chatid, sendString);
-
-  } else if (msgText.toLowerCase() == 'wut') {
+  if (msgText.toLowerCase() == 'wut') {
     sendString = 'Hallo ' + name + '!';
     bot.sendPhoto(chatid, "http://i.imgur.com/1JdLiGS.png");
 
@@ -89,11 +72,5 @@ bot.onText(/^/, function (msg) {
         bot.sendVideo(chatid, "https://media.tenor.com/images/a578b2df97812643906774ca0811952a/tenor.gif");
         break;
     }
-
-  } else if (msgText.toLowerCase().includes('goesting') || msgText.toLowerCase().includes('zin in')) {
-    sendString = '( ͡° ͜ʖ ͡°)';
-    bot.sendMessage(chatid, sendString);
-  }
+  } 
 });
-
-module.exports = bot;
