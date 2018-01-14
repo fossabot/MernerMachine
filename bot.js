@@ -57,7 +57,7 @@ bot.onText(/^/, function (msg) {
   } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")) {
 
     bot.deleteMessage(chatid, mssid);
-    sendString = 'LADIES AND GENTLEMEN, ' + nametoUpperCase() + 'IS LAUGHING OUT LOUD!';
+    sendString = 'LADIES AND GENTLEMEN, ' + name.toUpperCase() + 'IS LAUGHING OUT LOUD!';
     bot.sendMessage(chatid, sendString);
 
     var r = Math.floor(Math.random() * 4);
