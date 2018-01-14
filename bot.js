@@ -65,8 +65,8 @@ bot.onText(/^/, function (msg) {
   } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")) {
     deleteMessage(chatid, messid);
 
-    sendString = 'No ' + capitalizeFirstLetter(name) + ', that\'s not a real lol. \nThis is real lol:';
-    bot.sendMessage(chatid, sendString);
+    //sendString = 'No ' + capitalizeFirstLetter(name) + ', that\'s not a real lol. \nThis is real lol:';
+    //bot.sendMessage(chatid, sendString);
 
     var r = Math.floor(Math.random() * 4);
 
