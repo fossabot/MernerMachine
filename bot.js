@@ -28,6 +28,7 @@ bot.onText(/^/, function (msg) {
   var name = msg.from.first_name.toLowerCase();
   var msgText = msg.text;
   var chatid = msg.chat.id;
+  var mssid = msg.message_id;
   var sendString;
 
   //Log message
