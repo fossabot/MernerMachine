@@ -23,13 +23,11 @@ if (process.env.NODE_ENV === 'production') {
 //Log on console
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
-//Receive message
 bot.onText(/^/, function (msg) {
   //Create vars 
   var name = msg.from.first_name.toLowerCase();
   var msgText = msg.text;
   var chatid = msg.chat.id;
-  var messid = msg.message_id;
   var sendString;
 
   //Log message
@@ -58,11 +56,6 @@ bot.onText(/^/, function (msg) {
     bot.sendMessage(chatid, sendString);
 
   } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")) {
-
-    deleteMessage(chatid, messid);
-    sendString = 'LADIES AND GENTLEMEN, ' + nametoUpperCase() + 'IS LAUGHING OUT LOUD!';
-    bot.sendMessage(chatid, sendString);
-
     var r = Math.floor(Math.random() * 4);
 
     switch (r) {
@@ -79,5 +72,5 @@ bot.onText(/^/, function (msg) {
         bot.sendVideo(chatid, "https://media.tenor.com/images/a578b2df97812643906774ca0811952a/tenor.gif");
         break;
     }
-  }
+  } 
 });
