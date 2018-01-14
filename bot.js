@@ -30,7 +30,7 @@ bot.onText(/^/, function (msg) {
   var sendString;
 
   //Log message
-  console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name + '\nMessage: ' + msgText + 'Message ID: ' + mssid);
+  console.log('ONTEXT TRIGGER:\nChat ID: ' + chatid + '\nFrom: ' + name + '\nMessage: ' + msgText + '\nMessage ID: ' + mssid);
 
   //Person replies
   if (kCounter > 0 && name == kName && msgText.toLowerCase() != 'k') {
@@ -56,7 +56,7 @@ bot.onText(/^/, function (msg) {
 
   } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")) {
 
-    bot.deleteMessage(chatid, messid);
+    bot.deleteMessage(chatid, mssid);
     sendString = 'LADIES AND GENTLEMEN, ' + nametoUpperCase() + 'IS LAUGHING OUT LOUD!';
     bot.sendMessage(chatid, sendString);
 
