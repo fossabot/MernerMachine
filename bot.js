@@ -23,11 +23,6 @@ if (process.env.NODE_ENV === 'production') {
 //Log on console
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
-//Functions
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 //Receive message
 bot.onText(/^/, function (msg) {
   //Create vars 
@@ -63,10 +58,10 @@ bot.onText(/^/, function (msg) {
     bot.sendMessage(chatid, sendString);
 
   } else if (msgText.toLowerCase() == 'lol' && !(msgText == "LOL")) {
-    deleteMessage(chatid, messid);
 
-    //sendString = 'No ' + capitalizeFirstLetter(name) + ', that\'s not a real lol. \nThis is real lol:';
-    //bot.sendMessage(chatid, sendString);
+    deleteMessage(chatid, messid);
+    sendString = 'LADIES AND GENTLEMEN, ' + nametoUpperCase()  + 'IS LAUGHING OUT LOUD!';
+    bot.sendMessage(chatid, sendString);
 
     var r = Math.floor(Math.random() * 4);
 
